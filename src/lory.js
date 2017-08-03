@@ -180,13 +180,7 @@ export function lory (slider, opts) {
          */
         position.x = nextOffset;
 
-        /**
-         * update the index with the nextIndex only if
-         * the offset of the nextIndex is in the range of the maxOffset
-         */
-        if (slides[nextIndex].offsetLeft <= maxOffset) {
-            index = nextIndex;
-        }
+        index = nextIndex;
 
         if (infinite && (nextIndex === slides.length - infinite || nextIndex === 0)) {
             if (direction) {
@@ -260,7 +254,7 @@ export function lory (slider, opts) {
             slides = setupInfinite(slice.call(slideContainer.children));
         } else {
             slides = slice.call(slideContainer.children);
-            
+
             if (prevCtrl) {
                 prevCtrl.classList.add('disabled');
             }
